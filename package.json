@@ -1,0 +1,19 @@
+{
+  "name": "aoi",
+  "version": "0.1.0",
+  "description": "AOJ bot",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abouthiroppy/aoi.git"
+  },
+  "author": "abouthiroppy <git@about-hiroppy.com> (http://about-hiroppy.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abouthiroppy/aoi/issues"
+  },
+  "homepage": "https://github.com/abouthiroppy/aoi#readme"
+}
