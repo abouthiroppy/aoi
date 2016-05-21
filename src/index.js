@@ -147,7 +147,7 @@ function createUserPromise(users) {
         if (codeSizeRanking !== null && codeSizeRanking <= 10) {
           const tweet = createTweetText(Object.assign({}, userSet, {
             type: 'code_size',
-            rank: cputimeRanking
+            rank: codeSizeRanking
           }));
 
           postToTwitter(tweet);
