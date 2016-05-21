@@ -12,10 +12,10 @@ const statusApi  = 'http://judge.u-aizu.ac.jp/onlinejudge/webservice/status_log'
 const problemApi = 'http://judge.u-aizu.ac.jp/onlinejudge/webservice/problem?id=';
 
 const client = new Twitter({
-  consumer_key       : process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret    : process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key   : process.env.TWITTER_ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+  'consumer_key'       : process.env['TWITTER_CONSUMER_KEY'],
+  'consumer_secret'    : process.env['TWITTER_CONSUMER_SECRET'],
+  'access_token_key'   : process.env['TWITTER_ACCESS_TOKEN_KEY'],
+  'access_token_secret': process.env['TWITTER_ACCESS_TOKEN_SECRET']
 });
 
 const currentDateFile = 'current-date.txt';
@@ -91,7 +91,7 @@ function formatStatusData(res) {
         submissionDate: user.submission_date[0]
       });
     }
- }
+  }
 
   return users;
 }
@@ -100,7 +100,7 @@ function checkUsers(users) {
   return new Promise((resolve, reject) => {
     const res = [];
 
-    for (let i =0; i < users.length; i++) {
+    for (let i = 0; i < users.length; i++) {
       if (currentDate === users[i].submissionDate) break;
       res.push(users[i]);
     }
@@ -201,7 +201,6 @@ function readCurrentDate() {
 }
 
 function writeCurrentDate(date) {
-  console.log(date)
   return new Promise((resolve, reject) => {
     fs.writeFile(currentDateFile, date, (err) => {
       if (err) reject(err);
@@ -220,7 +219,7 @@ function createTweetText(obj) {
 }
 
 function postToTwitter(text) {
-  client.post('statuses/update',{status: text}, (error, tweet, response) => {
+  client.post('statuses/update', {status: text}, (error, tweet, response) => {
     if(error) throw error;
   });
 }

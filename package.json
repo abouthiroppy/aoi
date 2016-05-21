@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node -r dotenv/config src/index.js"
+    "start": "node -r dotenv/config src/index.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "xml2js": "^0.4.16"
   },
   "devDependencies": {
+    "eslint": "^2.10.2",
     "mocha": "^2.4.5"
   }
 }
