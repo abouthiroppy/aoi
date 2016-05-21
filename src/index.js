@@ -49,7 +49,7 @@ Promise.resolve().then(() => {
   return Promise.all(promises);
 }).then(() => {
 
-  // return writeCurrentDate(currentDate);
+  return writeCurrentDate(currentDate);
 }).catch((err) => {
   console.error(err);
 });
