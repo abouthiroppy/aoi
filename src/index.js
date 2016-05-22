@@ -125,8 +125,8 @@ function createUserPromise(users) {
 
         const userSet = {
           id         : user.id,
-          cputime    : user.cputime,
-          codeSize   : user.codeSize,
+          cputime    : convertTime(user.cputime),
+          codeSize   : convertTime(user.codeSize),
           language   : user.language,
           problemId  : problemId,
           problemName: problemName
@@ -222,4 +222,10 @@ function postToTwitter(text) {
   client.post('statuses/update', {status: text}, (error, tweet, response) => {
     if(error) throw error;
   });
+}
+
+function convertTime(sec) {
+  sec = `0000${sec}`.slice(-4);
+
+  return `${sec.slice(0, 2)}:${sec.slice(2, 4)}`;
 }
