@@ -6,6 +6,10 @@
 ```
 $ git clone git@github.com:abouthiroppy/aoi.git
 $ npm install
+```
+
+## Usage
+```
 $ # Please write `.env`
 $ npm start
 ```
